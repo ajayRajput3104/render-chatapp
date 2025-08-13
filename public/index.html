@@ -26,7 +26,7 @@
         console.log(message,"send")
         socket.emit('send-message', message)
         const li=document.createElement('li')
-        li.innerText=`Message from ${socket.id}:`+message;
+        li.innerText='You:'+message;
         allMessages.appendChild(li)
     })
     socket.on('receive-message', (message) => {
