@@ -26,13 +26,13 @@
         console.log(message,"send")
         socket.emit('send-message', message)
         const li=document.createElement('li')
-        li.innerText=message+"(you)";
+        li.innerText=`Message from ${socket.id}:`+message;
         allMessages.appendChild(li)
     })
     socket.on('receive-message', (message) => {
         console.log(message,"received")
         const li=document.createElement('li')
-        li.innerText=message+"(friend)";
+        li.innerText=`Message from ${socket.id}:`+message;
         allMessages.appendChild(li)
     })
 
